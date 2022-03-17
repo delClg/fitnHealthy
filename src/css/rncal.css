@@ -1,0 +1,65 @@
+#idTable {
+  width: 60%;
+  margin: auto;
+}
+tr:hover {
+  cursor: pointer;
+}
+#idTable th {
+  color: tomato;
+  text-align: left;
+  width: 60px;
+}
+#idTable td:nth-child(1) {
+  color: tomato;
+}
+
+#idTable td:nth-child(2) {
+  color: steelblue;
+}
+
+#lBut {
+  margin-top: 20px;
+}
+#fName {
+  box-sizing: border-box;
+  height: 34px;
+  width: 50%;
+  padding-left: 10px;
+}
+#fBut {
+  margin: 0;
+}
+#inpDiv {
+  border: 2px solid black;
+  padding: 15px;
+  border-radius: 5px;
+  width: fit-content;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-around;
+}
+#rncalf {
+  color: white;
+  height: 170px;
+  background-color: black;
+  width: 100%;
+  box-shadow: 10px 10px 20px grey;
+  border-radius: 2px;
+}
+
+#rncalm {
+  height: calc(100vh - 358px);
+}
+#socials {
+  bottom: 30px;
+}
+#thnks {
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: min(10px, 0.7vw);
+  position: absolute;
+  bottom: 0;
+}

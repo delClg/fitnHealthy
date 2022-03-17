@@ -6,12 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>3 foods</title>
     <link rel="icon" href="./logo.jpg" />
+    <link rel="stylesheet" href="../src/css/main.css" />
     <link rel="stylesheet" href="../src/css/bmical.css" />
+    <link rel="stylesheet" href="../src/css/rncal.css" />
   </head>
-  <body id="top">
+  <body>
     <header>
       <div id="small">
-        <button id="menu"><img src="" alt="" /></button>
+        <button id="menu">
+          <img src="https://www.svgrepo.com/show/36306/menu.svg" alt="menu" />
+        </button>
       </div>
       <a id="logo" href="./main.html">Fitness & Health!</a>
       <div id="big">
@@ -34,9 +38,7 @@
         <div class="dropdown" id="selected">
           Tools
           <ul>
-            <li class="lstItem">
-              <a href="./bmical.html">BMI calculator</a>
-            </li>
+            <li class="lstItem"><a href="./bmical.html">BMI calculator</a></li>
             <li class="lstItem">
               <a href="./rncal.html">Recipe Nutrition calculator</a>
             </li>
@@ -54,73 +56,34 @@
         </div>
       </div>
     </header>
-    <main>
-      <!-- The Modal -->
+    <main id="rncalm">
       <!-- The Modal -->
       <div id="myModal" class="modal">
         <!-- Modal content -->
         <div class="modal-content">
           <span class="close">&times;</span>
-          <p id="pModal"></p>
+          <div class="textArea"></div>
+          <table id="idTable"></table>
         </div>
       </div>
       <!-- End -->
-      <h1 id="artitle">
-        What Is Body Mass Index (BMI) and What Does It Measure?
-      </h1>
-      <h5 style="font-weight: 600">By Maria</h5>
-      <p>
-        Body mass index (BMI) is a calculation that is sometimes used in
-        healthcare settings as an indirect method to determine a person's body
-        weight category. This BMI calculator can help you learn what this
-        measurement means and how it relates to your health and fitness.
-      </p>
+      <h1 id="artitle">Try Our Recipe Nutrition Calculator</h1>
+      <h5 style="font-weight: 600">By Nakamura</h5>
       <div id="app">
-        <h2 style="color: #4f748e">Calculate your BMI index</h2>
-        <div id="units">
+        <button id="lBut" onclick="pList()">getList</button>
+        <br />
+        <div id="inpDiv">
           <input
-            class="unitr"
-            type="radio"
-            name="units"
-            id="si"
-            onclick="chng('m')"
-            checked
+            type="text"
+            name="foodName"
+            id="fName"
+            placeholder="Food Name"
           />
-          <label class="unitl" for="si">Metric</label>
-          <input
-            class="unitr"
-            type="radio"
-            name="units"
-            id="ft"
-            onclick="chng('e')"
-          />
-          <label class="unitl" for="ft">English</label>
+          <button id="fBut">Search</button>
         </div>
-        <div id="gen">
-          <input class="genderr" type="radio" name="gender" id="male" />
-          <label class="genderl" for="male">Male</label>
-          <input class="genderr" type="radio" name="gender" id="female" />
-          <label class="genderl" for="female">Female</label>
-        </div>
-        <div id="inps">
-          <input type="number" name="age" id="age" placeholder="Age" />
-          <input type="number" name="ht" id="ht" placeholder="Height (m)" />
-          <input type="number" name="wt" id="wt" placeholder="Weight (kgs)" />
-        </div>
-        <button onclick="calc()" id="butSub">CALCULATE</button>
       </div>
-      <p>
-        <strong>Note:</strong> BMI is not used for muscle builders, long
-        distance athletes, pregnant women, the elderly or young children. This
-        is because BMI does not take into account whether the weight is carried
-        as muscle or fat, just the number. Those with a higher muscle mass, such
-        as athletes, may have a high BMI but not be at greater health risk.
-        Those with a lower muscle mass, such as children who have not completed
-        their growth or the elderly who may be losing some muscle mass may have
-        a lower BMI
-      </p>
     </main>
-    <footer>
+    <footer id="rncalf">
       <div id="fmain">
         <a id="flogo" href="./main.html">Fitness & Health!</a>
         <hr
@@ -133,24 +96,33 @@
         />
         <a id="ftop" href="#top">Return to top</a>
         <div id="socials">
-          <a href="https://www.facebook.com/"
+          <a target="_blank" href="https://www.facebook.com/"
             ><img
               src="https://www.svgrepo.com/show/34004/facebook.svg"
               alt="facebook"
           /></a>
-          <a href="https://github.com/delClg/fitnHealthy/tree/noReact"
+          <a
+            target="_blank"
+            href="https://github.com/delClg/fitnHealthy/tree/noReact"
             ><img
               src="https://www.svgrepo.com/show/333546/github.svg"
               alt="github"
           /></a>
-          <a href="https://twitter.com/"
+          <a target="_blank" href="https://twitter.com/"
             ><img
               src="https://www.svgrepo.com/show/56784/twitter.svg"
               alt="twitter"
           /></a>
         </div>
+        <p id="thnks">
+          U.S. Department of Agriculture, Agricultural Research Service.
+          FoodData Central, 2019 ::
+          <a target="_blank" href="https://fdc.nal.usda.gov"
+            >fdc.nal.usda.gov.</a
+          >
+        </p>
       </div>
     </footer>
-    <script src="../src/js/bmical.js"></script>
+    <script src="../src/js/rncal.js"></script>
   </body>
 </html>
