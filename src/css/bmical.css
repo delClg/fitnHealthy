@@ -190,10 +190,29 @@ footer {
 #socials {
   margin: auto;
   position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   bottom: 20px;
-  display: flex;
-  width: 30px;
-  justify-content: space-around;
+  width: fit-content;
+}
+
+#socials a {
+  margin-left: 10px;
+  margin-right: 10px;
+  object-fit: cover;
+  display: inline-block;
+  border-radius: 50%;
+  border: none;
+  width: 20px;
+  height: 20px;
+}
+#socials a img:hover {
+  cursor: pointer;
+}
+#socials a img {
+  width: 100%;
+  border-radius: 50%;
+  background-color: white;
 }
 /* CSS for Modal */
 /* The Modal (background) */
