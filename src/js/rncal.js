@@ -1,9 +1,23 @@
 const key = "45SCbX1t3bGOjsUuivMdUjfdAU56lmSajhossJJI";
 const baseURL = "https://api.nal.usda.gov/fdc/v1/food";
-let c = 100;
+const inp = document.getElementById("fName");
 async function fetchList() {
   return await new Promise((resolve, reject) => {
     fetch(`${baseURL}s/list?api_key=${key}`)
+      .then((res) => {
+        resolve(res.json());
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
+}
+
+async function fetchS(str) {
+  let pgSize = 20;
+  let word = str.replace(" ", "%20");
+  return await new Promise((resolve, reject) => {
+    fetch(`${baseURL}s/search?api_key=${key}&query=${word}&pageSize=${pgSize}`)
       .then((res) => {
         resolve(res.json());
       })
@@ -25,10 +39,10 @@ async function fetchN(foodId) {
   });
 }
 
-async function pList() {
+function pList() {
+  let c = 100;
   fetchList().then((res) => {
-    content.innerHTML = "";
-    idTable.innerHTML = "";
+    clearModal();
     showModal("id", "Name of the product", true);
     for (let i = 0; i < Math.min(res.length, c); i++) {
       showModal(res[i].fdcId, res[i].description);
@@ -36,13 +50,35 @@ async function pList() {
     modal.scrollTop = 0;
   });
 }
-function addTable(res) {
-  idTable.innerHTML = "";
-  showDetails(res);
+
+function foodS() {
+  let text = inp.value;
+  if (text.length <= 2) {
+    alert("Enter atleast 3 charcters");
+    return;
+  }
+  clearModal();
+  fetchS(text).then((res) => {
+    showSres("Id", "Name", "Brand", "Country", true);
+    for (let i = 0; i < res.foods.length; i++) {
+      showSres(
+        res.foods[i].fdcId,
+        res.foods[i].description,
+        res.foods[i].hasOwnProperty("brandOwner")
+          ? res.foods[i].brandOwner
+          : "Not found",
+        res.foods[i].hasOwnProperty("marketCountry")
+          ? res.foods[i].marketCountry
+          : "Not Found"
+      );
+    }
+  });
 }
+
 function dispN(foodId) {
   fetchN(foodId).then((res) => {
-    addTable(res);
+    clearModal();
+    showDetails(res);
   });
 }
 
@@ -73,6 +109,11 @@ window.onclick = function (event) {
     modal.style.display = "none";
   }
 };
+
+function clearModal() {
+  content.innerHTML = "";
+  idTable.innerHTML = "";
+}
 
 function showModal(id, name, isth = false) {
   let tag;
@@ -107,6 +148,11 @@ function showDetails(obbj) {
     foodNutrients: foodNutr,
   } = obbj;
   content.innerHTML += `<h3>${fname} #${fid}</h3>`;
+  if (
+    obbj.hasOwnProperty("foodCategory") &&
+    obbj.foodCategory.hasOwnProperty("description")
+  )
+    content.innerHTML += `<h5>Category: ${obbj.foodCategory.description}</h5>`;
   if (attr.length > 0) {
     content.innerHTML += `<h5>Tags: </h5><p>`;
     for (let i = 0; i < attr.length; i++)
@@ -120,6 +166,7 @@ function showDetails(obbj) {
       content.innerHTML += `<p>${ing[i].ingredientDescription}: ${ing[i].ingredientWeight} (g)</p>`;
     }
   }
+  content.innerHTML += `<h5>Composition: (per 100g) </h5>`;
   if (foodNutr.length > 0) {
     idTable.innerHTML = `<tr><th>Name</th><th>Amount</th></tr>`;
     for (let i = 0; i < foodNutr.length; i++) {
@@ -128,5 +175,16 @@ function showDetails(obbj) {
       }
     }
   }
+  modal.style.display = "block";
+}
+
+function showSres(id, name, brand, country, isth = false) {
+  let tag;
+  if (isth) {
+    tag = "th";
+  } else {
+    tag = "td";
+  }
+  idTable.innerHTML += `<tr onclick="dispN(${id})" ><${tag}>${id}</${tag}><${tag}>${name}</${tag}><${tag}>${brand}</${tag}><${tag}>${country}</${tag}></tr>`;
   modal.style.display = "block";
 }

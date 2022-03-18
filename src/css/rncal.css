@@ -17,6 +17,10 @@ tr:hover {
 #idTable td:nth-child(2) {
   color: steelblue;
 }
+#idTable td,
+th {
+  padding: 8px 15px;
+}
 
 #lBut {
   margin-top: 20px;
@@ -51,15 +55,20 @@ tr:hover {
 }
 
 #rncalm {
-  height: calc(100vh - 358px);
+  min-height: calc(100vh - 270px);
 }
 #socials {
-  bottom: 30px;
+  bottom: 40px;
 }
 #thnks {
   left: 50%;
   transform: translateX(-50%);
-  font-size: min(10px, 0.7vw);
+  font-size: x-small;
   position: absolute;
-  bottom: 0;
+  bottom: 5px;
+}
+
+.textArea p {
+  font-size: small;
+  line-height: 10px;
 }
