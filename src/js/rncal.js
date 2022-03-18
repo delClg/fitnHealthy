@@ -78,6 +78,7 @@ function foodS() {
 function dispN(foodId) {
   fetchN(foodId).then((res) => {
     clearModal();
+    console.log(res);
     showDetails(res);
   });
 }
@@ -135,6 +136,7 @@ function showModal(id, name, isth = false) {
   //   newRow.appendChild(nameCol);
   //   idTable.appendChild(newRow);
   idTable.innerHTML += `<tr onclick="dispN(${id})" ><${tag}>${id}</${tag}><${tag}>${name}</${tag}></tr>`;
+  modal.scrollTop = 0;
   modal.style.display = "block";
 }
 // End
@@ -144,7 +146,6 @@ function showDetails(obbj) {
     description: fname,
     fdcId: fid,
     foodAttributes: attr,
-    inputFoods: ing,
     foodNutrients: foodNutr,
   } = obbj;
   content.innerHTML += `<h3>${fname} #${fid}</h3>`;
@@ -160,7 +161,8 @@ function showDetails(obbj) {
         ? (content.innerHTML += `${attr[i].value}</p>`)
         : (content.innerHTML += `${attr[i].value}, `);
   }
-  if (ing.length > 0) {
+  if (obbj.hasOwnProperty("inputFoods") && obbj.inputFoods.length > 0) {
+    let ing = obbj.inputFoods;
     content.innerHTML += `<h5>Known Ingredients: </h5>`;
     for (let i = 0; i < ing.length; i++) {
       content.innerHTML += `<p>${ing[i].ingredientDescription}: ${ing[i].ingredientWeight} (g)</p>`;
@@ -175,6 +177,7 @@ function showDetails(obbj) {
       }
     }
   }
+  modal.scrollTop = 0;
   modal.style.display = "block";
 }
 
@@ -186,5 +189,6 @@ function showSres(id, name, brand, country, isth = false) {
     tag = "td";
   }
   idTable.innerHTML += `<tr onclick="dispN(${id})" ><${tag}>${id}</${tag}><${tag}>${name}</${tag}><${tag}>${brand}</${tag}><${tag}>${country}</${tag}></tr>`;
+  modal.scrollTop = 0;
   modal.style.display = "block";
 }

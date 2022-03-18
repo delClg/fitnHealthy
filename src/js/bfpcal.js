@@ -17,22 +17,60 @@ function chng(a) {
 }
 
 function calc() {
+  let bmi;
   let weight = parseFloat(wt.value);
   let height = parseFloat(ht.value);
-  if (weight <= 0 || height <= 0 || isNaN(weight) || isNaN(height)) {
+  if (
+    weight <= 0 ||
+    height <= 0 ||
+    isNaN(weight) ||
+    isNaN(height) ||
+    (!male.checked && !female.checked)
+  ) {
     alert("Please enter valid values!");
     return;
   }
-  let bmi, message;
   if (eng.checked) bmi = (weight / (height * 12) ** 2) * 703;
   else bmi = weight / height ** 2;
-  if (bmi < 18.5) message = "You are Underweight";
-  else if (bmi < 24.9) message = "You are Healthy";
-  else if (bmi < 29.9) message = "You are Overweight";
-  else if (bmi > 30) message = "You are Obese";
-  showModal(message, bmi);
+  let m1, m2, a1;
+  if (male.checked) {
+    if (parseFloat(age.value) >= 18) {
+      m1 = 1.51;
+      m2 = 0.23;
+      a1 = -16.2;
+    } else {
+      m1 = 1.51;
+      m2 = -0.7;
+      a1 = -2.2;
+    }
+  } else {
+    if (parseFloat(age.value) >= 18) {
+      m1 = 1.51;
+      m2 = 0.23;
+      a1 = -5.4;
+    } else {
+      m1 = 1.51;
+      m2 = -0.7;
+      a1 = 1.4;
+    }
+  }
+  let bfp = m1 * bmi + m2 * age.value + a1;
+  let message;
+  if (male.checked) {
+    if (bfp >= 25) message = "Obese";
+    if (bfp >= 18) message = "Average";
+    if (bfp >= 17) message = "Fitness";
+    if (bfp >= 6) message = "Athletes";
+    if (bfp >= 2) message = "Essential Fat";
+  } else {
+    if (bfp >= 32) message = "Obese";
+    if (bfp >= 25) message = "Average";
+    if (bfp >= 21) message = "Fitness";
+    if (bfp >= 14) message = "Athletes";
+    if (bfp >= 10) message = "Essential Fat";
+  }
+  showModal(message, bfp);
 }
-
 // JS for modal
 
 // Get the modal
