@@ -58,16 +58,16 @@ function calc() {
   let message;
   if (male.checked) {
     if (bfp >= 25) message = "Obese";
-    if (bfp >= 18) message = "Average";
-    if (bfp >= 17) message = "Fitness";
-    if (bfp >= 6) message = "Athletes";
-    if (bfp >= 2) message = "Essential Fat";
+    else if (bfp >= 18) message = "Average";
+    else if (bfp >= 17) message = "Fitness";
+    else if (bfp >= 6) message = "Athletes";
+    else if (bfp >= 2) message = "Essential Fat";
   } else {
     if (bfp >= 32) message = "Obese";
-    if (bfp >= 25) message = "Average";
-    if (bfp >= 21) message = "Fitness";
-    if (bfp >= 14) message = "Athletes";
-    if (bfp >= 10) message = "Essential Fat";
+    else if (bfp >= 25) message = "Average";
+    else if (bfp >= 21) message = "Fitness";
+    else if (bfp >= 14) message = "Athletes";
+    else if (bfp >= 10) message = "Essential Fat";
   }
   showModal(message, bfp);
 }
@@ -100,7 +100,9 @@ window.onclick = function (event) {
 };
 
 function showModal(para, bmi) {
-  content.innerHTML = `Your BMI is ${bmi.toFixed(2)}<br>${para}`;
+  content.innerHTML = `Your Body Fat Percentage is ${bmi.toFixed(
+    2
+  )}<br>${para}`;
   modal.style.display = "block";
 }
 // End
