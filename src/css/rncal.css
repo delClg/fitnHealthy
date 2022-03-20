@@ -3,6 +3,27 @@
   max-width: 90%;
   margin: auto;
 }
+.load-but {
+  position: relative;
+}
+.load-but .but-text {
+  visibility: hidden;
+}
+.load-but::after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 50%;
+  border-top: 2px solid transparent;
+  border-top-color: white;
+  animation: load-animation 1s linear infinite;
+}
 tr:hover {
   cursor: pointer;
 }
@@ -74,4 +95,13 @@ th {
 .textArea p {
   font-size: small;
   line-height: 10px;
+}
+
+@keyframes load-animation {
+  0% {
+    transform: rotate(0turn);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
 }

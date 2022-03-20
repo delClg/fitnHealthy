@@ -41,6 +41,9 @@ async function fetchN(foodId) {
 
 function pList() {
   let c = 100;
+  const btn = document.getElementById("lBut");
+  console.log(btn);
+  btn.classList.add("load-but");
   fetchList().then((res) => {
     clearModal();
     showModal("id", "Name of the product", true);
@@ -48,15 +51,18 @@ function pList() {
       showModal(res[i].fdcId, res[i].description);
     }
     modal.scrollTop = 0;
+    btn.classList.remove("load-but");
   });
 }
 
 function foodS() {
+  const btn = document.getElementById("fBut");
   let text = inp.value;
   if (text.length <= 2) {
     alert("Enter atleast 3 charcters");
     return;
   }
+  btn.classList.add("load-but");
   clearModal();
   fetchS(text).then((res) => {
     showSres("Id", "Name", "Brand", "Country", true);
@@ -72,6 +78,7 @@ function foodS() {
           : "Not Found"
       );
     }
+    btn.classList.remove("load-but");
   });
 }
 
