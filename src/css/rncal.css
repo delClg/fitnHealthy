@@ -106,3 +106,12 @@ th {
     transform: rotate(1turn);
   }
 }
+
+@media screen and (max-width: 600px) {
+  #fName {
+    height: 30px;
+  }
+  button {
+    height: 30px;
+  }
+}

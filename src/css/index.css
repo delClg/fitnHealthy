@@ -74,6 +74,7 @@ header {
   border-radius: 5px;
 }
 .resdrop {
+  width: 85%;
   border: none !important;
   padding: 10px;
   margin: 0;
