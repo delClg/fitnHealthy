@@ -1,5 +1,6 @@
 :root {
   --bg-color: white;
+  scroll-behavior: smooth;
 }
 body {
   margin: 0;
@@ -9,18 +10,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-a:hover {
+a:hover,
+a:active {
   cursor: pointer;
+  color: coral;
 }
 a {
   color: inherit;
   text-decoration: none;
 }
-a:hover {
-  color: coral;
-}
 #logo {
-  font-size: larger;
+  font-size: x-large;
   color: chocolate;
   text-decoration: wavy;
   position: absolute;
@@ -57,7 +57,8 @@ header {
   display: inline-block;
   padding-bottom: 10px;
 }
-.dropdown:hover {
+.dropdown:hover,
+.dropdown:active {
   cursor: pointer;
   border-bottom: 5px solid brown;
 }
@@ -70,8 +71,25 @@ header {
   background-color: antiquewhite;
   border-radius: 5px;
 }
+.resdrop {
+  border: none !important;
+  padding: 10px;
+  margin: 0;
+}
+.resdrop:hover ul,
+.resdrop:active ul {
+  right: 0;
+  top: 0;
+  transform: translateX(100%);
+  color: black;
+}
+.resdrop ul li {
+  width: fit-content;
+  max-width: 150px;
+  min-width: 100px;
+  padding-right: 15px;
+}
 .dropdown ul li {
-  width: max-content;
   max-width: 150px;
   min-width: 100px;
   text-align: left;
@@ -85,14 +103,43 @@ header {
 }
 
 #menu {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   background-color: white;
   border: none;
   position: absolute;
-  left: 5px;
+  left: 20px;
   top: 50%;
   transform: translateY(-50%);
+}
+#subMenu {
+  min-width: 150px;
+  max-width: 250px;
+  color: white;
+  display: none;
+  position: absolute;
+  top: 75px;
+  z-index: 99;
+  background-color: black;
+}
+#subMenu ul {
+  margin: 0;
+  text-align: left;
+  list-style-type: none;
+  padding: 0;
+}
+#subMenu ul li {
+  padding-left: 20px;
+  padding-bottom: 3px;
+  margin-bottom: 3px;
+  border-bottom: 1px solid white;
+}
+#subMenu ul li:first-child {
+  margin-top: 5px;
+}
+#subMenu ul li:last-child {
+  margin-bottom: 0;
+  padding-bottom: 5px;
 }
 main {
   min-height: calc(100vh - 278px);
@@ -115,12 +162,12 @@ footer {
   position: absolute;
   top: 10px;
   left: 10px;
-  font-size: larger;
+  font-size: large;
   color: chocolate;
   text-decoration: wavy;
 }
 #ftop {
-  font-size: smaller;
+  font-size: small;
   position: absolute;
   top: 10px;
   right: 10px;
@@ -144,7 +191,8 @@ footer {
   width: 20px;
   height: 20px;
 }
-#socials a img:hover {
+#socials a img:hover,
+#socials a img:active {
   cursor: pointer;
 }
 #socials a img {
@@ -162,6 +210,12 @@ footer {
   }
 }
 @media screen and (max-width: 600px) {
+  header {
+    height: 75px;
+  }
+  main {
+    min-height: calc(100vh - 249.5px);
+  }
   #small {
     display: block;
   }
