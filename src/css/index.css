@@ -216,8 +216,8 @@ footer {
 }
 @media screen and (max-width: 600px) {
   #logo {
-    bottom: 50%;
-    transform: translate(-50%, 15%);
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
   header {
     height: 75px;
