@@ -24,6 +24,8 @@ main {
 }
 #units,
 #gen {
+  display: flex;
+  justify-content: space-around;
   padding: 5px;
   padding-right: 10px;
   width: 160px;
@@ -39,7 +41,7 @@ main {
 } */
 .unitr,
 .genderr {
-  margin-left: 10px;
+  margin-left: 5px;
 }
 #inps {
   margin-top: 20px;
