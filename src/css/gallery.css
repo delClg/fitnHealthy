@@ -1,0 +1,29 @@
+main {
+  background-color: #e0e0e0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.imgDiv * {
+  margin: 0;
+}
+.imgDiv {
+  flex: 1 0 auto;
+  margin: 10px 15px;
+  max-width: 150px;
+  height: 130px;
+  border-radius: 10px;
+  background: #e0e0e0;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  padding: 10px;
+}
+.imgDiv img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  object-position: center;
+}
+.imgDiv p {
+  font-size: small;
+  opacity: 0.6;
+}
