@@ -97,6 +97,20 @@ th {
   font-size: small;
   line-height: 10px;
 }
+.loadModal {
+  color: aliceblue;
+  text-align: center;
+  display: block; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 98; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.75); /* Black w/ opacity */
+}
 
 @keyframes load-animation {
   0% {

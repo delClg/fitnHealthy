@@ -42,7 +42,6 @@ async function fetchN(foodId) {
 function pList() {
   let c = 100;
   const btn = document.getElementById("lBut");
-  console.log(btn);
   btn.classList.add("load-but");
   fetchList().then((res) => {
     clearModal();
@@ -83,9 +82,16 @@ function foodS() {
 }
 
 function dispN(foodId) {
+  const load = document.createElement("div");
+  load.classList += " loadModal";
+  // const para = document.createElement("p");
+  // para.innerHTML = "Loading...";
+  // const txt = document.createTextNode("Loading...");
+  // load.appendChild(para);
+  document.querySelector("main").appendChild(load);
   fetchN(foodId).then((res) => {
+    document.querySelector("main").removeChild(load);
     clearModal();
-    console.log(res);
     showDetails(res);
   });
 }
