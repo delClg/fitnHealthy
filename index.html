@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fit 'n Healthy</title>
-    <link rel="icon" href="./public/logo2.jpg" />
-    <link rel="stylesheet" href="./src/css/index.css" />
+    <link rel="icon" href="./logo.jpg" />
+    <link rel="stylesheet" href="../src/css/bmical.css" />
+    <link rel="stylesheet" href="../src/css/index.css" />
   </head>
   <body>
     <header>
@@ -23,7 +24,9 @@
               <div class="dropdown resdrop">
                 Fitness
                 <ul>
-                  <li class="lstItem"><a href="">Beginners</a></li>
+                  <li class="lstItem">
+                    <a href="./public/workouts.html">Workouts</a>
+                  </li>
                   <li class="lstItem"><a href="">Walking</a></li>
                   <li class="lstItem"><a href="">Cardio</a></li>
                 </ul>
@@ -34,7 +37,7 @@
                 Gallery
                 <ul>
                   <li class="lstItem">
-                    <a href="./public/gallery.html">Food Charts</a>
+                    <a href="./gallery.html">Food Charts</a>
                   </li>
                 </ul>
               </div>
@@ -44,17 +47,13 @@
                 Tools
                 <ul>
                   <li class="lstItem">
-                    <a href="./public/bmical.html">BMI calculator</a>
+                    <a href="./bmical.html">BMI calculator</a>
                   </li>
                   <li class="lstItem">
-                    <a href="./public/rncal.html"
-                      >Recipe Nutrition calculator</a
-                    >
+                    <a href="./rncal.html">Recipe Nutrition calculator</a>
                   </li>
                   <li class="lstItem">
-                    <a href="./public/bfpcal.html"
-                      >Body Fat percentage calculator</a
-                    >
+                    <a href="./bfpcal.html">Body Fat percentage calculator</a>
                   </li>
                 </ul>
               </div>
@@ -64,21 +63,23 @@
                 About Us
                 <ul>
                   <li class="lstItem">
-                    <a href="./public/pjctDtls.html">About project</a>
+                    <a href="./pjctDtls.html">About Project</a>
                   </li>
-                  <li class="lstItem"><a href="">Contact Us</a></li>
+                  <li class="lstItem"><a href="#">Contact Us</a></li>
                 </ul>
               </div>
             </li>
           </ul>
         </div>
       </div>
-      <a id="logo" href="./index.html">Fitness & Health!</a>
+      <a id="logo" href="../index.html">Fitness & Health!</a>
       <div id="big">
         <div class="dropdown">
           Fitness
           <ul>
-            <li class="lstItem"><a href="">Beginners</a></li>
+            <li class="lstItem">
+              <a href="./public/workouts.html">Workouts</a>
+            </li>
             <li class="lstItem"><a href="">Walking</a></li>
             <li class="lstItem"><a href="">Cardio</a></li>
           </ul>
@@ -87,39 +88,106 @@
           Gallery
           <ul>
             <li class="lstItem">
-              <a href="./public/gallery.html">Food Charts</a>
+              <a href="./gallery.html">Food Charts</a>
             </li>
           </ul>
         </div>
         <div class="dropdown">
           Tools
           <ul>
+            <li class="lstItem"><a href="./bmical.html">BMI calculator</a></li>
             <li class="lstItem">
-              <a href="./public/bmical.html">BMI calculator</a>
+              <a href="./rncal.html">Recipe Nutrition calculator</a>
             </li>
             <li class="lstItem">
-              <a href="./public/rncal.html">Recipe Nutrition calculator</a>
-            </li>
-            <li class="lstItem">
-              <a href="./public/bfpcal.html">Body Fat percentage calculator</a>
+              <a href="./bfpcal.html">Body Fat percentage calculator</a>
             </li>
           </ul>
         </div>
-        <div class="dropdown">
+        <div class="dropdown" id="selectedSub">
           About Us
           <ul>
             <li class="lstItem">
-              <a href="./public/pjctDtls.html">About Project</a>
+              <a href="./pjctDtls.html">About Project</a>
             </li>
-            <li class="lstItem"><a href="">Contact Us</a></li>
+            <li class="lstItem"><a href="#">Contact Us</a></li>
           </ul>
         </div>
       </div>
     </header>
-    <main></main>
-    <footer>
+    <main>
+      <h1 style="font-style: italic">
+        “I regret doing that kickass workout.” Said no one. Ever.
+      </h1>
+      <article>
+        <dfn>
+          <em>Nutrition</em> is the study of how food and drink affects our
+          bodies with special regard to the essential nutrients necessary to
+          support human health.</dfn
+        >
+        <br />
+        It looks at the physiological and biochemical processes involved in
+        nourishment and how substances in food provide energy or are converted
+        into body tissues.
+        <br />
+        Poor nutrition can lead to a lack of energy, digestive problems, food
+        allergies, weight gain, depression and anxiety as well as many of
+        today’s most prevalent chronic diseases like coronary heart disease,
+        cancer and ADHA.
+        <br />
+        <br />
+        <em>Fitness & Health </em> helps you make better decisions about foods
+        you eat and the lifestyle changes you need to adopt for living a better
+        life!
+        <br />
+        <br />
+        Exercising is an integral part of our health. Exercising regularly,
+        every day if possible, is the single most important thing you can do for
+        your health. In the short term, exercise helps to control appetite,
+        boost mood, and improve sleep.
+        <br />
+        <p>
+          We understand that following strict workout regimes is pretty hard.
+          But, our team has collected many resources that would enable you to
+          work less hard scouring through web.
+        </p>
+        <p>
+          Currently, we have 3 main tools, BMI calculator, Body Fat percentage
+          calculator and Food Nutrition finder.<br /><br />
+          Based on your BMI index we have also provided you the suitable
+          exercises that you need to implement in your daily life.
+        </p>
+        If you follow our instructions carefully then you can maintain your body
+        and mind sound and fit.<br />
+      </article>
+      <ul>
+        <li>
+          You can use our BMI calculator
+          <a
+            style="font-style: italic; font-weight: lighter"
+            href="./public/bmical.html"
+            >here
+          </a>
+          to get a better idea of you fitness.
+        </li>
+        <li>
+          You can follow the link you'll be provided according to your BMI
+          status or just click
+          <a
+            style="font-style: italic; font-weight: lighter"
+            href="./workouts.html"
+          >
+            here
+          </a>
+          to go to the exercises page.
+        </li>
+      </ul>
+      If you follow the instructions carefully and implement them in your
+      day-to-day life the you can lead healthy stress-free.
+    </main>
+    <footer id="rncalf">
       <div id="fmain">
-        <a id="flogo" href="./index.html">Fitness & Health!</a>
+        <a id="flogo" href="../index.html">Fitness & Health!</a>
         <hr
           style="
             color: white;
@@ -130,19 +198,19 @@
         />
         <a id="ftop" href="#top">Return to top</a>
         <div id="socials">
-          <a href="https://www.facebook.com/" target="_blank"
+          <a target="_blank" href="https://www.facebook.com/"
             ><img
               src="https://www.svgrepo.com/show/34004/facebook.svg"
               alt="facebook"
           /></a>
           <a
-            href="https://github.com/delClg/fitnHealthy/tree/noReact"
             target="_blank"
+            href="https://github.com/delClg/fitnHealthy/tree/noReact"
             ><img
               src="https://www.svgrepo.com/show/333546/github.svg"
               alt="github"
           /></a>
-          <a href="https://twitter.com/" target="_blank"
+          <a target="_blank" href="https://twitter.com/"
             ><img
               src="https://www.svgrepo.com/show/56784/twitter.svg"
               alt="twitter"
@@ -150,6 +218,6 @@
         </div>
       </div>
     </footer>
-    <script src="./src/js/index.js"></script>
+    <script src="../src/js/index.js"></script>
   </body>
 </html>

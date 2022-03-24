@@ -141,7 +141,6 @@ header {
 #subMenu ul li {
   padding-left: 20px;
   padding-bottom: 3px;
-  padding-top: 3px;
   margin-bottom: 3px;
   border-bottom: 1px solid white;
 }
@@ -151,19 +150,6 @@ header {
 #subMenu ul li:last-child {
   margin-bottom: 0;
   padding-bottom: 5px;
-}
-main {
-  max-width: 1400px;
-  padding: 30px;
-  width: 80vw;
-  margin: auto;
-  background-color: beige;
-  border-radius: 5px;
-  padding-bottom: 50px;
-  min-height: calc(100vh - 120px - 250px);
-}
-#artitle {
-  font-size: xx-large;
 }
 main {
   min-height: calc(100vh - 278px);
