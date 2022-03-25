@@ -9,6 +9,7 @@
   "author": "delClg",
   "license": "ISC",
   "dependencies": {
+    "start": "node server",
     "express": "^4.17.3",
     "mongodb": "^4.4.1",
     "mongoose": "^6.2.8",
