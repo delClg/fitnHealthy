@@ -1,0 +1,27 @@
+GET http://localhost:3000/users/
+
+###
+
+GET http://localhost:3000/users/623d80f59e294d42b6cac9d9
+
+###
+
+DELETE http://localhost:3000/users/623d80f59e294d42b6cac9d9
+
+###
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "userName": "Chakri",
+    "email": "che@jsi",
+    "pwd": "chakri"
+}
+
+###
+PATCH http://localhost:3000/users/623d80f59e294d42b6cac9d9
+Content-Type: application/json
+
+{
+    "userName": "New name"
+}

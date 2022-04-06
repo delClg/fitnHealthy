@@ -1,0 +1,131 @@
+#idTable {
+  min-width: 60%;
+  max-width: 90%;
+  margin: auto;
+}
+.load-but {
+  position: relative;
+}
+.load-but .but-text {
+  visibility: hidden;
+}
+.load-but::after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 50%;
+  border-top: 2px solid transparent;
+  border-top-color: white;
+  animation: load-animation 1s linear infinite;
+}
+tr:hover {
+  cursor: pointer;
+}
+#idTable th {
+  color: tomato;
+  text-align: left;
+  /* width: 60px; */
+}
+#idTable td:nth-child(1) {
+  color: chocolate;
+}
+
+#idTable td:nth-child(2) {
+  color: steelblue;
+}
+#idTable td,
+th {
+  width: fit-content;
+  max-width: 160px;
+  padding: 8px 15px;
+}
+
+#lBut {
+  margin-top: 20px;
+}
+#fName {
+  box-sizing: border-box;
+  height: 34px;
+  width: 50%;
+  padding-left: 10px;
+}
+#fBut {
+  margin: 0;
+}
+#inpDiv {
+  border: 2px solid black;
+  padding: 15px;
+  border-radius: 5px;
+  width: fit-content;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-around;
+}
+#rncalf {
+  color: white;
+  height: 170px;
+  background-color: black;
+  width: 100%;
+  box-shadow: 10px 10px 20px grey;
+  border-radius: 2px;
+}
+
+#rncalm {
+  min-height: calc(100vh - 270px);
+}
+#socials {
+  bottom: 40px;
+}
+#thnks {
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: x-small;
+  position: absolute;
+  bottom: 5px;
+}
+
+.textArea p {
+  font-size: small;
+  line-height: 10px;
+}
+.loadModal {
+  color: aliceblue;
+  text-align: center;
+  display: block; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 5; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.75); /* Black w/ opacity */
+}
+
+@keyframes load-animation {
+  0% {
+    transform: rotate(0turn);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #fName {
+    height: 30px;
+  }
+  button {
+    height: 30px;
+  }
+}

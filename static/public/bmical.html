@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Body Mass Index</title>
+    <link rel="icon" href="./logo2.jpg" />
+    <link rel="stylesheet" href="../src/css/bmical.css" />
+    <link rel="stylesheet" href="../src/css/index.css" />
+  </head>
+  <body id="top">
+    <header>
+      <div id="small">
+        <button id="menu">
+          <img src="https://www.svgrepo.com/show/36306/menu.svg" alt="menu" />
+        </button>
+        <div id="subMenu">
+          <!-- <button id="menu">
+            <img src="https://www.svgrepo.com/show/36306/menu.svg" alt="menu" />
+          </button> -->
+          <ul>
+            <li>
+              <div class="dropdown resdrop">
+                Fitness
+                <ul>
+                  <li class="lstItem"><a href="../index.html">Home</a></li>
+                  <li class="lstItem">
+                    <a href="./workouts.html">Workouts</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="dropdown resdrop">
+                Gallery
+                <ul>
+                  <li class="lstItem">
+                    <a href="./gallery.html">Food Charts</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="dropdown resdrop">
+                Tools
+                <ul>
+                  <li class="lstItem">
+                    <a href="./bmical.html">BMI calculator</a>
+                  </li>
+                  <li class="lstItem">
+                    <a href="./rncal.html">Recipe Nutrition calculator</a>
+                  </li>
+                  <li class="lstItem">
+                    <a href="./bfpcal.html">Body Fat percentage calculator</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="dropdown resdrop">
+                About Us
+                <ul>
+                  <li class="lstItem">
+                    <a href="./pjctDtls.html">About Project</a>
+                  </li>
+                  <li class="lstItem"><a href="./account.html">Login</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <a id="logo" href="../index.html">Fitness & Health!</a>
+      <div id="big">
+        <div class="dropdown">
+          Fitness
+          <ul>
+            <li class="lstItem"><a href="../index.html">Home</a></li>
+            <li class="lstItem"><a href="./workouts.html">Workouts</a></li>
+          </ul>
+        </div>
+        <div class="dropdown">
+          Gallery
+          <ul>
+            <li class="lstItem">
+              <a href="./gallery.html">Food Charts</a>
+            </li>
+          </ul>
+        </div>
+        <div class="dropdown" id="selectedSub">
+          Tools
+          <ul>
+            <li class="lstItem">
+              <a href="./bmical.html">BMI calculator</a>
+            </li>
+            <li class="lstItem">
+              <a href="./rncal.html">Recipe Nutrition calculator</a>
+            </li>
+            <li class="lstItem">
+              <a href="./bfpcal.html">Body Fat percentage calculator</a>
+            </li>
+          </ul>
+        </div>
+        <div class="dropdown">
+          About Us
+          <ul>
+            <li class="lstItem">
+              <a href="./pjctDtls.html">About Project</a>
+            </li>
+            <li class="lstItem"><a href="./account.html">Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main>
+      <!-- The Modal -->
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p id="pModal"></p>
+        </div>
+      </div>
+      <!-- End -->
+      <h1 id="artitle">
+        What Is Body Mass Index (BMI) and What Does It Measure?
+      </h1>
+      <p>
+        Body mass index (BMI) is a calculation that is sometimes used in
+        healthcare settings as an indirect method to determine a person's body
+        weight category. This BMI calculator can help you learn what this
+        measurement means and how it relates to your health and fitness.
+      </p>
+      <div id="app">
+        <h2 style="color: #4f748e">Calculate your BMI index</h2>
+        <div id="units">
+          <input
+            class="unitr"
+            type="radio"
+            name="units"
+            id="si"
+            onclick="chng('m')"
+            checked
+          />
+          <label class="unitl" for="si">Metric</label>
+          <input
+            class="unitr"
+            type="radio"
+            name="units"
+            id="ft"
+            onclick="chng('e')"
+          />
+          <label class="unitl" for="ft">English</label>
+        </div>
+        <div id="gen">
+          <input class="genderr" type="radio" name="gender" id="male" />
+          <label class="genderl" for="male">Male</label>
+          <input class="genderr" type="radio" name="gender" id="female" />
+          <label class="genderl" for="female">Female</label>
+        </div>
+        <div id="inps">
+          <input type="number" name="age" id="age" placeholder="Age" />
+          <input type="number" name="ht" id="ht" placeholder="Height (m)" />
+          <input type="number" name="wt" id="wt" placeholder="Weight (kgs)" />
+        </div>
+        <button onclick="calc()" id="butSub">CALCULATE</button>
+      </div>
+      <p>
+        <strong>Note:</strong> BMI is not used for muscle builders, long
+        distance athletes, pregnant women, the elderly or young children. This
+        is because BMI does not take into account whether the weight is carried
+        as muscle or fat, just the number. Those with a higher muscle mass, such
+        as athletes, may have a high BMI but not be at greater health risk.
+        Those with a lower muscle mass, such as children who have not completed
+        their growth or the elderly who may be losing some muscle mass may have
+        a lower BMI
+      </p>
+    </main>
+    <footer>
+      <div id="fmain">
+        <a id="flogo" href="../index.html">Fitness & Health!</a>
+        <hr
+          style="
+            color: white;
+            position: relative;
+            top: 40px;
+            background-color: white;
+          "
+        />
+        <a id="ftop" href="#top">Return to top</a>
+        <div id="socials">
+          <a href="https://www.facebook.com/" target="_blank"
+            ><img
+              src="https://www.svgrepo.com/show/34004/facebook.svg"
+              alt="facebook"
+          /></a>
+          <a
+            href="https://github.com/delClg/fitnHealthy/tree/noReact"
+            target="_blank"
+            ><img
+              src="https://www.svgrepo.com/show/333546/github.svg"
+              alt="github"
+          /></a>
+          <a href="https://twitter.com/" target="_blank"
+            ><img
+              src="https://www.svgrepo.com/show/56784/twitter.svg"
+              alt="twitter"
+          /></a>
+        </div>
+        <p class="bottomP">&#169; All rights reserved</p>
+      </div>
+    </footer>
+    <script src="../src/js/bmical.js"></script>
+    <script src="../src/js/index.js"></script>
+  </body>
+</html>

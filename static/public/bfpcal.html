@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Body Fat calculator</title>
+    <link rel="icon" href="./logo2.jpg" />
+    <link rel="stylesheet" href="../src/css/bmical.css" />
+    <link rel="stylesheet" href="../src/css/index.css" />
+    <link rel="stylesheet" href="../src/css/bfpcal.css" />
+  </head>
+  <body>
+    <header>
+      <div id="small">
+        <button id="menu">
+          <img src="https://www.svgrepo.com/show/36306/menu.svg" alt="menu" />
+        </button>
+        <div id="subMenu">
+          <!-- <button id="menu">
+            <img src="https://www.svgrepo.com/show/36306/menu.svg" alt="menu" />
+          </button> -->
+          <ul>
+            <li>
+              <div class="dropdown resdrop">
+                Fitness
+                <ul>
+                  <li class="lstItem"><a href="../index.html">Home</a></li>
+                  <li class="lstItem">
+                    <a href="./workouts.html">Workouts</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="dropdown resdrop">
+                Gallery
+                <ul>
+                  <li class="lstItem">
+                    <a href="./gallery.html">Food Charts</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="dropdown resdrop">
+                Tools
+                <ul>
+                  <li class="lstItem">
+                    <a href="./bmical.html">BMI calculator</a>
+                  </li>
+                  <li class="lstItem">
+                    <a href="./rncal.html">Recipe Nutrition calculator</a>
+                  </li>
+                  <li class="lstItem">
+                    <a href="./bfpcal.html">Body Fat percentage calculator</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="dropdown resdrop">
+                About Us
+                <ul>
+                  <li class="lstItem">
+                    <a href="./pjctDtls.html">About Project</a>
+                  </li>
+                  <li class="lstItem"><a href="./account.html">Login</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <a id="logo" href="../index.html">Fitness & Health!</a>
+      <div id="big">
+        <div class="dropdown">
+          Fitness
+          <ul>
+            <li class="lstItem"><a href="../index.html">Home</a></li>
+            <li class="lstItem"><a href="./workouts.html">Workouts</a></li>
+          </ul>
+        </div>
+        <div class="dropdown">
+          Gallery
+          <ul>
+            <li class="lstItem">
+              <a href="./gallery.html">Food Charts</a>
+            </li>
+          </ul>
+        </div>
+        <div class="dropdown" id="selectedSub">
+          Tools
+          <ul>
+            <li class="lstItem"><a href="./bmical.html">BMI calculator</a></li>
+            <li class="lstItem">
+              <a href="./rncal.html">Recipe Nutrition calculator</a>
+            </li>
+            <li class="lstItem">
+              <a href="./bfpcal.html">Body Fat percentage calculator</a>
+            </li>
+          </ul>
+        </div>
+        <div class="dropdown">
+          About Us
+          <ul>
+            <li class="lstItem">
+              <a href="./pjctDtls.html">About Project</a>
+            </li>
+            <li class="lstItem"><a href="./account.html">Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main id="bfcalm">
+      <!-- The Modal -->
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p id="pModal"></p>
+        </div>
+      </div>
+      <!-- End -->
+      <h1 id="artitle" style="line-height: 50px; margin-bottom: 20px">
+        Body Fat Calculator: Get an Instant Body Fat Percentage
+        <h4
+          style="
+            color: #4f748e;
+            font-size: xx-large;
+            margin-top: 0;
+            margin-bottom: 40px;
+          "
+        >
+          Estimate Your Body Fat Percentage With Simple Measurements
+        </h4>
+      </h1>
+      <p>
+        There are different ways to calculate your body fat percentage. Some
+        methods require special equipment or access to expert services. These
+        methods are recognized as being the most accurate. You can also estimate
+        body fat percentage at home for free. Using a body fat calculator is the
+        easiest method because it requires no special tools or lengthy
+        appointments with a specialist. This method will give you a body fat
+        percent estimate that you can confirm with other methods if you choose.
+        You'll need a basic tape measure and about five minutes to gather all
+        the data you need to get an instant body fat measurement.
+      </p>
+      <div id="app">
+        <h2 style="color: #4f748e">Calculate your Body Fat percentage</h2>
+        <div id="units">
+          <input
+            class="unitr"
+            type="radio"
+            name="units"
+            id="si"
+            onclick="chng('m')"
+            checked
+          />
+          <label class="unitl" for="si">Metric</label>
+          <input
+            class="unitr"
+            type="radio"
+            name="units"
+            id="ft"
+            onclick="chng('e')"
+          />
+          <label class="unitl" for="ft">English</label>
+        </div>
+        <div id="gen">
+          <input class="genderr" type="radio" name="gender" id="male" />
+          <label class="genderl" for="male">Male</label>
+          <input class="genderr" type="radio" name="gender" id="female" />
+          <label class="genderl" for="female">Female</label>
+        </div>
+        <div id="inps">
+          <input type="number" name="age" id="age" placeholder="Age" />
+          <input type="number" name="ht" id="ht" placeholder="Height (m)" />
+          <input type="number" name="wt" id="wt" placeholder="Weight (kgs)" />
+        </div>
+        <button onclick="calc()" id="butSub">CALCULATE</button>
+      </div>
+      <p style="font-size: small">
+        <strong>Note:</strong> THIS TOOL DOES NOT PROVIDE MEDICAL ADVICE. It is
+        intended for informational purposes only and is not a substitute for
+        professional medical consultation, diagnosis or treatment.
+      </p>
+      <h3>How to Use the Body Fat Calculator</h3>
+      Follow these guidelines for calculating the most accurate body fat
+      percentage.
+      <h4>When to Take Measurements</h4>
+      To get the most accurate result, you'll want to take measurements first
+      thing in the morning. Your weight can
+      <a
+        style="color: brown"
+        href="https://www.healthline.com/health/weight-fluctuation#:~:text=Daily%20weight%20fluctuation%20is%20normal,for%20the%20most%20accurate%20results."
+      >
+        fluctuate throughout the day</a
+      >
+      so it's smart to get your numbers before you've had anything to eat or
+      drink.
+      <h4>What to Use</h4>
+      Once you've weighed yourself, you'll need to take body measurements. Use a
+      soft, flexible (cloth or fiberglass) tape measure to gather the numbers.
+      Do not use a tape measure that is elastic.
+      <h4>How to Take Your Measurements</h4>
+      When you measure the circumference of each body part, the tape should feel
+      firm enough against your skin so that it stays in place but not so tight
+      that it causes an indentation. You can use English or metric units.
+      Measurements for men and women are slightly different.
+      <h4>Men</h4>
+      <ul>
+        <li>
+          <strong>Current weight.</strong> Use a digital scale if possible.
+        </li>
+        <li>
+          <strong> Waist circumference. </strong>Take the measurement at the
+          largest part of your belly, usually right at the level of your
+          umbilicus (belly button). Make sure that the tape measure stays level
+          to the floor. Don't hold your breath or suck in to get the
+          measurement.
+        </li>
+      </ul>
+      <h4>Women</h4>
+      <ul>
+        <li>
+          <strong> Current weight.</strong> Use a digital scale if possible.
+        </li>
+        <li>
+          <strong> Waist circumference. </strong>Take the measurement at the
+          largest part of your belly, usually right at the level of your
+          umbilicus (belly button). Make sure that the tape measure stays level
+          to the floor. Don't hold your breath or suck in to get the
+          measurement.
+        </li>
+        <li>
+          <strong>Wrist circumference.</strong> Measure around the smallest part
+          of your wrist. You may need a partner to help with this measurement as
+          it is hard to measure one-handed.
+        </li>
+        <li>
+          <strong>Hip circumference.</strong>
+          Measure around the largest part of your hips, usually at the posterior
+          extension of the gluteals (the place where your butt extends back).
+          Forearm circumference. Measure around at the widest part of your arm
+          below your elbow. It will be easiest to have a partner get this
+          measurement. Keep your arm relaxed during the measurement and let it
+          hang alongside your body (don't bend or flex the arm while measuring).
+        </li>
+      </ul>
+      Once you've gathered your numbers, input the data to calculate your body
+      fat percentage.
+      <!-- <script
+        type="text/javascript"
+        async
+        id="bodyfat-calculator"
+        data-type="verywell-tool"
+        data-vertical="verywellfit"
+        src="https://www.verywellfit.com/static/4.279.0/components/tools/calculators/iframe-embed/embed.min.js?id=bodyfat-calculator"
+      ></script> -->
+    </main>
+    <footer id="rncalf">
+      <div id="fmain">
+        <a id="flogo" href="../index.html">Fitness & Health!</a>
+        <hr
+          style="
+            color: white;
+            position: relative;
+            top: 40px;
+            background-color: white;
+          "
+        />
+        <a id="ftop" href="#top">Return to top</a>
+        <div id="socials">
+          <a target="_blank" href="https://www.facebook.com/"
+            ><img
+              src="https://www.svgrepo.com/show/34004/facebook.svg"
+              alt="facebook"
+          /></a>
+          <a
+            target="_blank"
+            href="https://github.com/delClg/fitnHealthy/tree/noReact"
+            ><img
+              src="https://www.svgrepo.com/show/333546/github.svg"
+              alt="github"
+          /></a>
+          <a target="_blank" href="https://twitter.com/"
+            ><img
+              src="https://www.svgrepo.com/show/56784/twitter.svg"
+              alt="twitter"
+          /></a>
+        </div>
+        <!-- <p id="thnks">
+          No APIs
+           <a
+            target="_blank"
+            href="https://rapidapi.com/justin-WFnsXH_t6/api/exercisedb/"
+            >ExercideDB</a
+          >         </p>-->
+        <p class="bottomP">&#169; All rights reserved</p>
+      </div>
+    </footer>
+    <script src="../src/js/bfpcal.js"></script>
+    <script src="../src/js/index.js"></script>
+  </body>
+</html>
