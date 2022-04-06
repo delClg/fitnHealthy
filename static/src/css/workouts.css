@@ -1,0 +1,20 @@
+video {
+  display: block;
+  margin: 30px auto;
+  object-fit: cover;
+  /* width: 900px;
+  height: 800px;
+  transform: scale(0.4) translate(-550px, -500px); */
+  width: 95%;
+  max-width: 500px;
+  height: 230px;
+  object-position: 100% 75%;
+}
+
+iframe {
+  width: 90%;
+  max-width: 500px;
+  height: 250px;
+  display: block;
+  margin: 40px auto;
+}
