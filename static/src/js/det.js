@@ -50,6 +50,8 @@ const names = [
   },
 ];
 
+// Adds all the cards from the above object
+
 function addCards() {
   for (let i = 0; i < names.length; i++) {
     const card = document.createElement("div");

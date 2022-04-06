@@ -33,6 +33,8 @@ router.get("/", async (req, res) => {
   //   );
 });
 
+// The routes to make the REST API
+
 // getting one
 router.get("/:id", getUser, (req, res) => {
   res.send(res.user);

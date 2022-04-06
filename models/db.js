@@ -2,6 +2,8 @@ const MongoClient = require("mongodb").MongoClient;
 
 const dbConnectionUrl = process.env.DATABASE_URL;
 
+// Incase mongoose doesn't work
+
 function initialize(
   dbName,
   dbCollectionName,

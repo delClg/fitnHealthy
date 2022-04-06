@@ -6,6 +6,8 @@ const ht = document.getElementById("ht");
 const wt = document.getElementById("wt");
 const age = document.getElementById("age");
 
+// Changes the units from English to SI and vice versa
+
 function chng(a) {
   if (a == "m") {
     ht.setAttribute("placeholder", "Height (m)");

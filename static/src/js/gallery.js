@@ -21,6 +21,8 @@ let images = [
   },
 ];
 
+// Gets the images
+
 async function fetchImgs() {
   page++;
   return await new Promise((resolve, reject) => {
@@ -33,6 +35,9 @@ async function fetchImgs() {
       });
   });
 }
+
+// Adds images into the HTML file
+
 function addImages() {
   fetchImgs().then((res) => {
     for (let i = 0; i < res.length; i++) {
@@ -56,6 +61,9 @@ function addImg(author, url) {
 
 addImages();
 // const myDiv = document.getElementsByTagName("BODY")[0];
+
+// To add images on reaching the bottom of the screen
+
 window.onscroll = () => {
   if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
     if (page <= 4) addImages();

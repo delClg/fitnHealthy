@@ -11,9 +11,14 @@ if (process.env.DATABASE_URL != null) {
   db.on("error", (error) => console.error(error));
   db.once("open", () => console.log("connected to database"));
 }
+
+// localhost:5000
+
 app.listen(process.env.PORT || 5000, () => {
   console.log("server started");
 });
+
+// express app configuration
 
 app.use(express.json());
 app.use(express.static("static"));
